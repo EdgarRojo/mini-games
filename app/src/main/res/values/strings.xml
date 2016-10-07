@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">3dTicTacToe 2016</string>
+    <string name="which_value_is_the_largest">Which Value is the Largest?</string>
 </resources>
