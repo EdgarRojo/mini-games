@@ -2,7 +2,6 @@ package com.example.csaper6.csaproject1_mini_games3dtictactoemrshorr2016;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 import android.widget.Button;
 
 public class MathGame extends AppCompatActivity {
@@ -34,15 +33,16 @@ public class MathGame extends AppCompatActivity {
         sButton = (Button) findViewById(R.id.sButton);
         tButton = (Button) findViewById(R.id.tButton);
 
+
         a = (int) (Math.random() * 1000);
         b = (int) (Math.random() * 1000);
         c = (int) (Math.random() * 1000);
-        d = (int) (Math.random() * 1000);
-        e = (int) (Math.random() * 1000);
-        f = (int) (Math.random() * 1000);
-        fsign = (int) (Math.random() * 4);
-        ssign = (int) (Math.random() * 4);
-        tsign = (int) (Math.random() * 4);
+        d = (int) (Numbers.random() * 1000);
+        e = (int) (Numbers.random() * 1000);
+        f = (int) (Numbers.random() * 1000);
+        fsign = (int) (Numbers.random() * 4);
+        ssign = (int) (Numbers.random() * 4);
+        tsign = (int) (Numbers.random() * 4);
 
         if (fsign == 0){
             fsymbol = "+";
