@@ -1,7 +1,8 @@
 package com.example.csaper6.csaproject1_mini_games3dtictactoemrshorr2016;
 
-import android.support.v7.app.AppCompatActivity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -19,14 +20,28 @@ public class MathGame extends Numbers {
     private int points;
     private TextView point;
     private Button next;
+    private Intent result;
+    private CountDownTimer c;
+    private TextView timer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_math_game);
-
+        result = new Intent();
         points = 0;
+        timer = (TextView) findViewById(R.id.timer);
+        c = new CountDownTimer(10000,1) {
+            @Override
+            public void onTick(long l) {
 
+            }
+
+            @Override
+            public void onFinish() {
+
+            }
+        };
         fButton = (Button) findViewById(R.id.fButton);
         sButton = (Button) findViewById(R.id.sButton);
         tButton = (Button) findViewById(R.id.tButton);
@@ -102,6 +117,7 @@ public class MathGame extends Numbers {
     }
 
     private boolean checkAnswer(double d) {
+
         if (d >= fButtonValue && d>=sButtonValue && d>=tButtonValue){
             return true;
         }
@@ -111,6 +127,18 @@ public class MathGame extends Numbers {
     }
 
     private void update() {
+        c.cancel();
+
+        result.putExtra(MenuScreen.SCORE_EXTRA,points);
+        setResult(MenuScreen.RESULT_SCORE, result);
+        c = new CountDownTimer(5000, 1000) {
+            public void onTick(long millisUntilFinished) {
+                timer.setText("" + millisUntilFinished / 1000);
+            }
+            public void onFinish() {
+                finish();
+            }
+        }.start();
         a = generateValues() * 1.0;
         b = generateValues() * 1.0;
         symbol = generateSign();
