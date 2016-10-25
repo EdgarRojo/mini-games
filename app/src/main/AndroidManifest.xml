@@ -17,8 +17,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".TicTacToe" />
-        <activity android:name=".NumberCompare"></activity>
-        <activity android:name=".MathGame"></activity>
+        <activity android:name=".NumberCompare" />
+        <activity android:name=".MathGame" />
+        <activity android:name=".Mole"></activity>
     </application>
 
 </manifest>
