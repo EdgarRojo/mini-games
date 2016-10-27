@@ -5,7 +5,7 @@
     <application
         android:allowBackup="true"
         android:hardwareAccelerated="false"
-        android:icon="@drawable/Joystick-512"
+        android:icon="@drawable/joystick_512"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
