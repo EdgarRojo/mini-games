@@ -18,7 +18,7 @@ public class MenuScreen extends AppCompatActivity {
 
     private TextView scoreT;
     private int score ;
-    private Button compareB, tttB, coinB,wackAMoleB, mathB;
+    private Button compareB, tttB, coinB,wackAMoleB, mathB, stopwatchB;
     public static final int RESULT_SCORE = 8745;
     public static final String SCORE_EXTRA = "CELEBRATIONTIMES";
     private GifImageView pumpkin;
@@ -46,24 +46,6 @@ public class MenuScreen extends AppCompatActivity {
 
     }
 
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        MenuInflater inflater = getMenuInflater();
-//        inflater.inflate(R.menu.home, menu);
-//        return true;
-//    }
-//
-//    @Override
-//    public boolean onOptionsItemSelected(MenuItem item) {
-//        // Handle item selection
-//        switch (item.getItemId()) {
-//            case R.id.quit:
-//                exit();
-//                return true;
-//            default:
-//                return super.onOptionsItemSelected(item);
-//        }
-//    }
 
 
     private void buttonStuffs() {
@@ -72,6 +54,7 @@ public class MenuScreen extends AppCompatActivity {
         coinB = (Button)findViewById(R.id.coin);
         mathB = (Button)findViewById(R.id.math);
         wackAMoleB = (Button)findViewById(R.id.mole);
+        stopwatchB = (Button)findViewById(R.id.stopwatch);
 
         compareB.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -124,6 +107,17 @@ public class MenuScreen extends AppCompatActivity {
                     Toast.makeText(MenuScreen.this, "You need 20 or more pumpkins to play", Toast.LENGTH_SHORT).show();
                 else {
                     Intent i = new Intent(MenuScreen.this, Mole.class);
+                    startActivityForResult(i, RESULT_SCORE);
+                }
+            }
+        });
+        stopwatchB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(score<10)
+                    Toast.makeText(MenuScreen.this, "You need 10 or more pumpkins to play", Toast.LENGTH_SHORT).show();
+                else {
+                    Intent i = new Intent(MenuScreen.this, Stopwatch.class);
                     startActivityForResult(i, RESULT_SCORE);
                 }
             }
