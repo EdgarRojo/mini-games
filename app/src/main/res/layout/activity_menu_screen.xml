@@ -45,8 +45,13 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Math"
-            android:id="@+id/math"/>
+            android:text="coin"
+            android:id="@+id/coin"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Wack-a-Mole"
+            android:id="@+id/mole"/>
 
 
     </LinearLayout>
@@ -55,24 +60,28 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:gravity="center">
+
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="coin"
-            android:id="@+id/coin"/>
+            android:text="Math"
+            android:id="@+id/math"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Stopwatch"
+            android:id="@+id/stopwatch"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Tic Tac Toe"
             android:id="@+id/ttt"/>
 
+
     </LinearLayout>
 
 
     </LinearLayout>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Wack-a-Mole"
-        android:id="@+id/mole"/>
+
 </LinearLayout>

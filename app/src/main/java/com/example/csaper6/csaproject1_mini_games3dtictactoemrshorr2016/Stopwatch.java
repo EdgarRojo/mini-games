@@ -1,9 +1,13 @@
 package com.example.csaper6.csaproject1_mini_games3dtictactoemrshorr2016;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Chronometer;
@@ -15,6 +19,7 @@ public class Stopwatch extends AppCompatActivity {
     private long mLastStopTime = 0;
     private TextView point;
     private int points;
+    private Intent result;
 
     int min = (int)(Math.random()*0);
     int sec = (int)(Math.random()*0);
@@ -26,6 +31,8 @@ public class Stopwatch extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stopwatch);
         chronometer = (Chronometer) findViewById(R.id.chronometer);
+
+        result = new Intent();
 
         point = (TextView) findViewById(R.id.point);
         points = 0;
@@ -73,6 +80,27 @@ public class Stopwatch extends AppCompatActivity {
         chronometer.setVisibility(View.VISIBLE);
 
         mLastStopTime = SystemClock.elapsedRealtime();
+        result.putExtra(MenuScreen.SCORE_EXTRA,points);
+        setResult(MenuScreen.RESULT_SCORE, result);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.home, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle item selection
+        switch (item.getItemId()) {
+            case R.id.quit:
+                finish();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
 }

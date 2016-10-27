@@ -20,6 +20,7 @@
         <activity android:name=".NumberCompare" />
         <activity android:name=".MathGame" />
         <activity android:name=".CoinFlip"/>
+        <activity android:name=".Stopwatch"/>
         <activity android:name=".Mole">
         </activity>
     </application>
