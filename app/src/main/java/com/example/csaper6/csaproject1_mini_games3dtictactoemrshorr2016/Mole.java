@@ -1,16 +1,15 @@
 package com.example.csaper6.csaproject1_mini_games3dtictactoemrshorr2016;
 
-import android.graphics.drawable.Drawable;
+import android.content.Intent;
+import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import java.util.concurrent.TimeUnit;
 
 public class Mole extends AppCompatActivity {
     private ImageView one, two, three, four, five, six, seven, eight, nine, ten, eleven, twelve, thirteen, fourteen, fifteen;
@@ -20,11 +19,15 @@ public class Mole extends AppCompatActivity {
     private int points;
     private TextView p;
     private int t;
+    private Intent result;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mole);
+
+
+        result = new Intent();
 
         t = 1000;
 
@@ -84,6 +87,8 @@ public class Mole extends AppCompatActivity {
                 @Override
                 public void onClick(View view) {
                     points++;
+                    result.putExtra(MenuScreen.SCORE_EXTRA,points);
+                    setResult(MenuScreen.RESULT_SCORE, result);
                     p.setText(Integer.toString(points));
                     but[finalB].setClickable(false);
                 }
@@ -91,6 +96,27 @@ public class Mole extends AppCompatActivity {
         }
 
         c.start();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.home, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle item selection
+        switch (item.getItemId()) {
+            case R.id.quit:
+                result.putExtra(MenuScreen.SCORE_EXTRA,points);
+                setResult(MenuScreen.RESULT_SCORE, result);
+                finish();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
 }

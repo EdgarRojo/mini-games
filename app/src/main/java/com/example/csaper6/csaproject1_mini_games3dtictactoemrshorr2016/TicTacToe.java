@@ -1,7 +1,11 @@
 package com.example.csaper6.csaproject1_mini_games3dtictactoemrshorr2016;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -16,14 +20,16 @@ public class TicTacToe extends AppCompatActivity {
     private boolean points = false;
     private int scoreP = 0;
     private String prediction;
+    private Intent result;
     //Player 1 = true & Player 2 = false
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.tictactoe);
+        setContentView(R.layout.activity_tic_tac_toe);
 
-        score = (Button) findViewById(R.id.score);
+        result = new Intent();
+        score = (Button) findViewById(R.id.scorettt);
 
         reset = (Button) findViewById(R.id.reset);
 
@@ -475,8 +481,27 @@ public class TicTacToe extends AppCompatActivity {
         if (points == true)
         {
             scoreP++;
-
+            result.putExtra(MenuScreen.SCORE_EXTRA,scoreP);
+            setResult(MenuScreen.RESULT_SCORE, result);
             score.setText("Score: " + scoreP);
+        }
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.home, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle item selection
+        switch (item.getItemId()) {
+            case R.id.quit:
+                finish();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
         }
     }
 }

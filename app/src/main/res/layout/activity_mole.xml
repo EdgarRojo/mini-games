@@ -175,4 +175,4 @@
             android:id="@+id/p" />
     </LinearLayout>
 
-</RelativeLayout>
+</LinearLayout>

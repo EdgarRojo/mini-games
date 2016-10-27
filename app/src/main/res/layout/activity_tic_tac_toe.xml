@@ -106,7 +106,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Score: "
-        android:id="@+id/score"
+        android:id="@+id/scorettt"
         android:layout_alignTop="@+id/reset"
         android:layout_alignParentEnd="true" />
 </RelativeLayout>

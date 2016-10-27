@@ -26,9 +26,7 @@
         <pl.droidsonroids.gif.GifImageView
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:id="@+id/pumpkinScore"
-            android:background="@drawable/pumpkin"
-            android:onClick=""/>
+            android:id="@+id/pumpkinScore"/>
     </LinearLayout>
     <LinearLayout
         android:layout_width="wrap_content"
@@ -37,7 +35,8 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:gravity="center">
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -48,22 +47,14 @@
             android:layout_height="wrap_content"
             android:text="Math"
             android:id="@+id/math"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Tic Tac Toe"
-            android:id="@+id/ttt"/>
+
 
     </LinearLayout>
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Timer"
-            android:id="@+id/time"/>
+        android:orientation="vertical"
+        android:gravity="center">
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -72,10 +63,16 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="3d tic tac toe"
-            android:id="@+id/ttt3"/>
+            android:text="Tic Tac Toe"
+            android:id="@+id/ttt"/>
 
     </LinearLayout>
 
+
     </LinearLayout>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Wack-a-Mole"
+        android:id="@+id/mole"/>
 </LinearLayout>

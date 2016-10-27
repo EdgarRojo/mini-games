@@ -19,7 +19,9 @@
         <activity android:name=".TicTacToe" />
         <activity android:name=".NumberCompare" />
         <activity android:name=".MathGame" />
-        <activity android:name=".Mole"></activity>
+        <activity android:name=".CoinFlip"/>
+        <activity android:name=".Mole">
+        </activity>
     </application>
 
 </manifest>

@@ -6,6 +6,9 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -107,12 +110,29 @@ public class NumberCompare extends AppCompatActivity {
         SharedPreferences.Editor editor = prefs.edit();
         editor.putInt("Score", score);
         editor.commit();
-        if(this.getSharedPreferences("Stuffs", Context.MODE_PRIVATE).getInt("HiScore", 0)<=score){
-            editor.putInt("HiScore", score);
-            editor.commit();
-        }
         finish();
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.home, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle item selection
+        switch (item.getItemId()) {
+            case R.id.quit:
+                result.putExtra(MenuScreen.SCORE_EXTRA,score);
+                setResult(MenuScreen.RESULT_SCORE, result);
+                finish();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
 }
