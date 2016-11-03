@@ -7,7 +7,9 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.csaper6.csaproject1_mini_games3dtictactoemrshorr2016.NumberCompare">
+    tools:context="com.example.csaper6.csaproject1_mini_games3dtictactoemrshorr2016.NumberCompare"
+    android:background="#000000">
+
 
     <Button
         android:layout_width="wrap_content"
@@ -34,7 +36,8 @@
         android:text="Score:"
         android:id="@+id/textScore"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:textColor="#ffdd00"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -44,7 +47,8 @@
         android:id="@+id/text"
         android:layout_below="@+id/textScore"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="85dp" />
+        android:layout_marginTop="85dp"
+        android:textColor="#ffdd00"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -53,6 +57,7 @@
         android:text="Large Text"
         android:id="@+id/timer"
         android:layout_below="@+id/textScore"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:textColor="#ffdd00"/>
 
 </RelativeLayout>

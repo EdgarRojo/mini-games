@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -25,11 +26,10 @@ public class Mole extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mole);
-
+        t = 600;
 
         result = new Intent();
 
-        t = 1000;
 
 
         one = (ImageView) findViewById(R.id.one);
@@ -55,6 +55,8 @@ public class Mole extends AppCompatActivity {
             but[x].setVisibility(View.INVISIBLE);
         }
 
+
+
         c = new CountDownTimer(t, 100) {
             public void onTick(long millisUntilFinished) {
             }
@@ -65,9 +67,9 @@ public class Mole extends AppCompatActivity {
                 i = (int) (Math.random() * but.length);
                 but[i].setClickable(true);
                 but[i].setVisibility(View.VISIBLE);
-                if (t>500){
-                    t = t-2;
-                }
+                if(t>=300)
+                    t=(int)(t*.9);
+                Log.e("asdf",""+t);
                 c.start();
             }
         };

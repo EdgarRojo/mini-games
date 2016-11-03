@@ -9,20 +9,28 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MenuScreen">
+        <activity android:name=".MenuScreen"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".TicTacToe" />
-        <activity android:name=".NumberCompare" />
-        <activity android:name=".MathGame" />
-        <activity android:name=".CoinFlip"/>
-        <activity android:name=".Stopwatch"/>
-        <activity android:name=".Mole">
-        </activity>
+        <activity android:name=".TicTacToe"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".NumberCompare"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".MathGame"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".CoinFlip"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Stopwatch"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Mole"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Hypno"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

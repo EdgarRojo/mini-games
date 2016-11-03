@@ -40,6 +40,8 @@ public class Stopwatch extends AppCompatActivity {
         time = (Button) (findViewById(R.id.time));
         time.setText(String.format("%02d",min) + ":" + String.format("%02d", sec));
 
+        result.putExtra(MenuScreen.SCORE_EXTRA,points);
+        setResult(MenuScreen.RESULT_SCORE, result);
 
     }
 

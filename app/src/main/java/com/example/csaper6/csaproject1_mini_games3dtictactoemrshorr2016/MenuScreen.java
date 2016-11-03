@@ -31,14 +31,16 @@ public class MenuScreen extends AppCompatActivity {
         scoreT = (TextView)findViewById(R.id.score);
         scoreT.setText(""+score);
         pumpkin = (GifImageView)findViewById(R.id.pumpkinScore);
-        pumpkin.setImageResource(R.drawable.pumpkin);
+        pumpkin.setImageResource(R.drawable.coinscore);
         ((GifDrawable)pumpkin.getDrawable()).start();
+        ((GifDrawable)pumpkin.getDrawable()).setSpeed(2f);
         ((GifDrawable)pumpkin.getDrawable()).setLoopCount(0);
         pumpkin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 score+=10;
                 refresh();
+                startActivity(new Intent(MenuScreen.this, Hypno.class));
             }
         });
 

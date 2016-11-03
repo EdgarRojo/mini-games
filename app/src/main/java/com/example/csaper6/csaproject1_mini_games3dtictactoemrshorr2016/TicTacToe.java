@@ -62,6 +62,10 @@ public class TicTacToe extends AppCompatActivity {
 
         reset.setEnabled(false);
 
+        result.putExtra(MenuScreen.SCORE_EXTRA,scoreP);
+        setResult(MenuScreen.RESULT_SCORE, result);
+        score.setText("Score: " + scoreP);
+
         oWin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

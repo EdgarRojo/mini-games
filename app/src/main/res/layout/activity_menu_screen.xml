@@ -23,7 +23,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/score"
             android:text="Score: 0"
-            android:textSize="50dp"/>
+            android:textSize="50dp"
+            android:textColor="#ffffff"/>
         <pl.droidsonroids.gif.GifImageView
             android:layout_width="100dp"
             android:layout_height="100dp"
