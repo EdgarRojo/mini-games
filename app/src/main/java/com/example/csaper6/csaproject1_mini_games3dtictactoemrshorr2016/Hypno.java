@@ -16,7 +16,10 @@ public class Hypno extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hypno);
         GifImageView hypno = (GifImageView)findViewById(R.id.hypno);
-        hypno.setImageResource(R.drawable.hypno);
+        if(Math.random()>=.5)
+            hypno.setImageResource(R.drawable.hypno);
+        else
+            hypno.setImageResource(R.drawable.toad);
         ((GifDrawable)hypno.getDrawable()).setLoopCount(0);
         ((GifDrawable)hypno.getDrawable()).start();
         Stopwatch s = new Stopwatch();

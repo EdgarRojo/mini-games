@@ -1,8 +1,10 @@
 package com.example.csaper6.csaproject1_mini_games3dtictactoemrshorr2016;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -99,6 +101,9 @@ public class CoinFlip extends AppCompatActivity {
             public void onAnimationCompleted(int loopNumber) {
                 ((GifDrawable)vid.getDrawable()).stop();
                 scoreT.setText("Score: "+score);
+                Vibrator v = (Vibrator) CoinFlip.this.getSystemService(Context.VIBRATOR_SERVICE);
+                // Vibrate for 500 milliseconds
+                v.vibrate(500);
             }
         });
     }
