@@ -30,7 +30,7 @@
         <activity android:name=".Mole"
             android:screenOrientation="portrait"/>
         <activity android:name=".Hypno"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"/>¡
     </application>
     <uses-permission android:name="android.permission.VIBRATE"/>
 </manifest>

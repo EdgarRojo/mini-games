@@ -53,7 +53,7 @@ public class CoinFlip extends AppCompatActivity {
     }
 
     private void flip() {
-        final int val = (int) (Math.random()*1.5);
+        final int val = (int) (Math.random()*2);
         if(val==0)
             vid.setImageResource(R.drawable.cointo0);
         else
